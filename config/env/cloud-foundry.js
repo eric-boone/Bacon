@@ -43,8 +43,8 @@ module.exports = {
     callbackURL: '/api/auth/twitter/callback'
   },
   google: {
-    clientID: getCred('mean-google', 'id') || 'APP_ID',
-    clientSecret: getCred('mean-google', 'secret') || 'APP_SECRET',
+    clientID: getCred('mean-google', 'id') || '474567501332-g79thg5ocbtpfpbttlpn260dnnodp688.apps.googleusercontent.com',
+    clientSecret: getCred('mean-google', 'secret') || 'UyPSIZ1gNaxbWcNKpfYPbiLZ',
     callbackURL: '/api/auth/google/callback'
   },
   linkedin: {
