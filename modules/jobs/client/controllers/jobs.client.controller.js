@@ -17,13 +17,18 @@ angular.module('jobs').controller('JobsController', ['$scope', '$stateParams', '
 
       // Create new job object
       var job = new Jobs({
-        title: this.title,
+        job_title: this.job_title,
+        job_description: this.job_description,
+        job_requirements: this.job_requirements,
+        job_rate: this.job_rate,
+        job_location: this.job_location,
+        job_notes: this.job_notes,
+        job_link: this.job_link,
         company: this.company,
-        description: this.description,
-        hourly_wage: this.hourly_wage,
-        requirements: this.requirements,
-        state: this.state,
-        contact_email: this.contact_email
+        company_notes: this.company_notes,
+        contact_name: this.contact_name,
+        contact_email: this.contact_email,
+        contact_phone: this.contact_phone
       });
 
       // Redirect after save
@@ -31,13 +36,19 @@ angular.module('jobs').controller('JobsController', ['$scope', '$stateParams', '
         $location.path('jobs/' + response._id);
 
         // Clear form fields
-        $scope.title = '';
+        $scope.job_title = '';
+        $scope.job_description = '';
+        $scope.job_requirements = '';
+        $scope.job_rate = '';
+        $scope.job_location = '';
+        $scope.job_notes = '';
+        $scope.job_link = '';
         $scope.company = '';
-        $scope.description = '';
-        $scope.requirements = '';
-        $scope.hourly_wage = '';
-        $scope.state = '';
+        $scope.company_notes = '';
+        $scope.contact_name = '';
         $scope.contact_email = '';
+        $scope.contact_phone = '';
+
       }, function (errorResponse) {
         $scope.error = errorResponse.data.message;
       });
