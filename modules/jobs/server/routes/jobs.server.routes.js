@@ -3,17 +3,17 @@
 /**
  * Module dependencies.
  */
-var articlesPolicy = require('../policies/jobs.server.policy'),
+var jobsPolicy = require('../policies/jobs.server.policy'),
   jobs = require('../controllers/jobs.server.controller');
 
 module.exports = function (app) {
   // Articles collection routes
-  app.route('/api/jobs').all(articlesPolicy.isAllowed)
+  app.route('/api/jobs').all(jobsPolicy.isAllowed)
     .get(jobs.list)
     .post(jobs.create);
 
   // Single article routes
-  app.route('/api/jobs/:articleId').all(articlesPolicy.isAllowed)
+  app.route('/api/jobs/:articleId').all(jobsPolicy.isAllowed)
     .get(jobs.read)
     .put(jobs.update)
     .delete(jobs.delete);

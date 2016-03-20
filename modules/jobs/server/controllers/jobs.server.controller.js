@@ -39,8 +39,18 @@ exports.read = function (req, res) {
 exports.update = function (req, res) {
   var job = req.job;
 
-  job.title = req.body.title;
-  job.content = req.body.content;
+  job.job_title = req.body.job_title;
+  job.job_description = req.body.job_description;
+  job.job_requirements = req.body.job_requirements;
+  job.job_rate = req.body.job_rate;
+  job.job_location = req.body.job_location;
+  job.job_notes = req.body.job_notes;
+  job.job_link = req.body.job_link;
+  job.company = req.body.company;
+  job.company_notes = req.body.company_notes;
+  job.contact_name = req.body.contact_name;
+  job.contact_email = req.body.contact_email;
+  job.contact_phone = req.body.contact_phone;
 
   job.save(function (err) {
     if (err) {
