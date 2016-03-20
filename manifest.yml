@@ -5,7 +5,7 @@ declared-services:
     plan: 100
 applications:
 - name: mean
-  host: mean-${random-word}
+  host: mean-bacon
   memory: 128M
   services:
   - mean-mongo
