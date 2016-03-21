@@ -31,7 +31,7 @@ var JobSchema = new Schema({
     trim: true
   },
   job_rate: {
-    type: Number,
+    type: String,
     default: '',
     trim: true
   },
@@ -74,6 +74,10 @@ var JobSchema = new Schema({
     type: String,
     default: '',
     trim: true
+  },
+  user: {
+    type: Schema.ObjectId,
+    ref: 'User'
   }
 });
 

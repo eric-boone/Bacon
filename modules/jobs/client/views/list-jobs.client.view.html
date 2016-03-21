@@ -11,9 +11,9 @@
       <th>Date Listed</th>
     </tr>
     <tr data-ng-repeat="job in jobs">
-      <td><a href="/jobs/{{job._id}}">{{job.title}}</a></td>
-      <td>{{job.company}} - {{job.state}}</td>
-      <td>{{job.hourly_wage}}</td>
+      <td><a href="/jobs/{{job._id}}/edit">{{job.job_title}}</a></td>
+      <td>{{job.company}} - {{job.job_location}}</td>
+      <td>{{job.job_rate}}</td>
       <td>{{job.created}}</td>
     </tr>
   </table>

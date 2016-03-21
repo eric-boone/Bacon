@@ -1,4 +1,4 @@
-<section ng-controller="JobsController" data-ng-init="findOne()">
+<section ng-controller="JobsController" data-ng-init="find()">
   <div class="page-header">
     <h1>Edit Job</h1>
   </div>
@@ -8,10 +8,8 @@
 
         <div class="form-group" show-errors>
           <label for="job_title">Title</label>
-          <input name="job_title" type="text" ng-model="job_title" id="job_title" class="form-control" placeholder="Job Title" required>
-          <div ng-messages="jobForm.job_title.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Job title is required.</p>
-          </div>
+          <p>{{job.job_title}}</p>
+          <input name="job_title" type="text" ng-model="job_title" id="job_title" class="form-control" placeholder="{{job.job_title}}">
         </div>
 
         <div class="form-group" show-errors>
@@ -46,10 +44,7 @@
 
         <div class="form-group" show-errors>
           <label for="company">Company</label>
-          <input name="company" type="text" ng-model="company" id="company" class="form-control" placeholder="Company" required>
-          <div ng-messages="jobForm.company.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Company is required.</p>
-          </div>
+          <input name="company" type="text" ng-model="company" id="company" class="form-control" placeholder="Company">
         </div>
 
         <div class="form-group" show-errors>

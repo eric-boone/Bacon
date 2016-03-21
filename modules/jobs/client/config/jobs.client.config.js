@@ -7,8 +7,7 @@ angular.module('jobs').run(['Menus',
     Menus.addMenuItem('topbar', {
       title: 'Jobs',
       state: 'jobs',
-      type: 'dropdown',
-      roles: ['*']
+      type: 'dropdown'
     });
 
     // Add the dropdown list item
@@ -20,8 +19,19 @@ angular.module('jobs').run(['Menus',
     // Add the dropdown create item
     Menus.addSubMenuItem('topbar', 'jobs', {
       title: 'Create Jobs',
-      state: 'jobs.create',
-      roles: ['user']
+      state: 'jobs.create'
+    });
+
+    // Add the dropdown view item
+    Menus.addSubMenuItem('topbar', 'jobs', {
+      title: 'View Jobs',
+      state: 'jobs.view'
+    });
+
+    // Add the dropdown edit item
+    Menus.addSubMenuItem('topbar', 'jobs', {
+      title: 'Edit Jobs',
+      state: 'jobs.edit'
     });
   }
 ]);

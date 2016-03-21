@@ -25,10 +25,10 @@ exports.invokeRolesPolicies = function () {
     roles: ['user'],
     allows: [{
       resources: '/api/jobs',
-      permissions: ['get', 'post']
+      permissions: '*'
     }, {
       resources: '/api/jobs/:jobId',
-      permissions: ['get']
+      permissions: '*'
     }]
   }, {
     roles: ['guest'],
@@ -48,10 +48,11 @@ exports.invokeRolesPolicies = function () {
 exports.isAllowed = function (req, res, next) {
   var roles = (req.user) ? req.user.roles : ['guest'];
 
-  // If an job is being processed and the current user created it then allow any manipulation
+  // If a job is being processed and the current user created it then allow any manipulation
   if (req.job && req.user && req.job.user.id === req.user.id) {
     return next();
   }
+
 
   // Check for user roles
   acl.areAnyRolesAllowed(roles, req.route.path, req.method.toLowerCase(), function (err, isAllowed) {

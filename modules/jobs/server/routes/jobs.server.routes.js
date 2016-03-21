@@ -13,7 +13,7 @@ module.exports = function (app) {
     .post(jobs.create);
 
   // Single article routes
-  app.route('/api/jobs/:articleId').all(jobsPolicy.isAllowed)
+  app.route('/api/jobs/:jobId').all(jobsPolicy.isAllowed)
     .get(jobs.read)
     .put(jobs.update)
     .delete(jobs.delete);
