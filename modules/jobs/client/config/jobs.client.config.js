@@ -1,13 +1,18 @@
-'use strict';
+(function () {
+  'use strict';
 
-// Configuring the Jobs module
-angular.module('jobs').run(['Menus',
-  function (Menus) {
-    // Add the jobs dropdown item
+  angular
+    .module('jobs')
+    .run(menuConfig);
+
+  menuConfig.$inject = ['Menus'];
+
+  function menuConfig(Menus) {
     Menus.addMenuItem('topbar', {
       title: 'Jobs',
       state: 'jobs',
-      type: 'dropdown'
+      type: 'dropdown',
+      roles: ['*']
     });
 
     // Add the dropdown list item
@@ -18,20 +23,9 @@ angular.module('jobs').run(['Menus',
 
     // Add the dropdown create item
     Menus.addSubMenuItem('topbar', 'jobs', {
-      title: 'Create Jobs',
-      state: 'jobs.create'
-    });
-
-    // Add the dropdown view item
-    Menus.addSubMenuItem('topbar', 'jobs', {
-      title: 'View Jobs',
-      state: 'jobs.view'
-    });
-
-    // Add the dropdown edit item
-    Menus.addSubMenuItem('topbar', 'jobs', {
-      title: 'Edit Jobs',
-      state: 'jobs.edit'
+      title: 'Create Job',
+      state: 'jobs.create',
+      roles: ['user']
     });
   }
-]);
+}());

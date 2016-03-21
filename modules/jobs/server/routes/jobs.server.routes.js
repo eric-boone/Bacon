@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Module dependencies.
+ * Module dependencies
  */
 var jobsPolicy = require('../policies/jobs.server.policy'),
   jobs = require('../controllers/jobs.server.controller');
@@ -12,12 +12,12 @@ module.exports = function (app) {
     .get(jobs.list)
     .post(jobs.create);
 
-  // Single article routes
+  // Single job routes
   app.route('/api/jobs/:jobId').all(jobsPolicy.isAllowed)
     .get(jobs.read)
     .put(jobs.update)
     .delete(jobs.delete);
 
-  // Finish by binding the article middleware
-  app.param('jobId', jobs.jobByID);
+  // Finish by binding the job middleware
+  app.param('jobId', jobs.articleByID);
 };

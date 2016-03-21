@@ -1,105 +1,52 @@
-'use strict';
+(function () {
+  'use strict';
 
-// Jobs controller
-angular.module('jobs').controller('JobsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Jobs',
-  function ($scope, $stateParams, $location, Authentication, Jobs) {
-    $scope.authentication = Authentication;
+  angular
+    .module('jobs')
+    .controller('JobsController', JobsController);
 
-    // Create new job
-    $scope.create = function (isValid) {
-      $scope.error = null;
+  JobsController.$inject = ['$scope', '$state', 'jobResolve', '$window', 'Authentication'];
 
+  function JobsController($scope, $state, job, $window, Authentication) {
+    var vm = this;
+
+    vm.job = job;
+    vm.authentication = Authentication;
+    vm.error = null;
+    vm.form = {};
+    vm.remove = remove;
+    vm.save = save;
+
+    // Remove existing Article
+    function remove() {
+      if ($window.confirm('Are you sure you want to delete?')) {
+        vm.job.$remove($state.go('jobs.list'));
+      }
+    }
+
+    // Save Article
+    function save(isValid) {
       if (!isValid) {
-        $scope.$broadcast('show-errors-check-validity', 'jobForm');
-
+        $scope.$broadcast('show-errors-check-validity', 'vm.form.jobForm');
         return false;
       }
 
-      // Create new job object
-      var job = new Jobs({
-        job_title: this.job_title,
-        job_description: this.job_description,
-        job_requirements: this.job_requirements,
-        job_rate: this.job_rate,
-        job_location: this.job_location,
-        job_notes: this.job_notes,
-        job_link: this.job_link,
-        company: this.company,
-        company_notes: this.company_notes,
-        contact_name: this.contact_name,
-        contact_email: this.contact_email,
-        contact_phone: this.contact_phone
-      });
-
-      // Redirect after save
-      job.$save(function (response) {
-        $location.path('jobs/' + response._id);
-
-        // Clear form fields
-        $scope.job_title = '';
-        $scope.job_description = '';
-        $scope.job_requirements = '';
-        $scope.job_rate = '';
-        $scope.job_location = '';
-        $scope.job_notes = '';
-        $scope.job_link = '';
-        $scope.company = '';
-        $scope.company_notes = '';
-        $scope.contact_name = '';
-        $scope.contact_email = '';
-        $scope.contact_phone = '';
-
-      }, function (errorResponse) {
-        $scope.error = errorResponse.data.message;
-      });
-    };
-
-    // Remove existing job
-    $scope.remove = function (job) {
-      if (job) {
-        job.$remove();
-
-        for (var i in $scope.jobs) {
-          if ($scope.jobs[i] === job) {
-            $scope.jobs.splice(i, 1);
-          }
-        }
+      // TODO: move create/update logic to service
+      if (vm.job._id) {
+        vm.job.$update(successCallback, errorCallback);
       } else {
-        $scope.job.$remove(function () {
-          $location.path('jobs');
+        vm.job.$save(successCallback, errorCallback);
+      }
+
+      function successCallback(res) {
+        $state.go('jobs.view', {
+          jobId: res._id
         });
       }
-    };
 
-    // Update existing job
-    $scope.update = function (isValid) {
-      $scope.error = null;
-
-      if (!isValid) {
-        $scope.$broadcast('show-errors-check-validity', 'jobForm');
-
-        return false;
+      function errorCallback(res) {
+        vm.error = res.data.message;
       }
-
-      var job = $scope.job;
-
-      job.$update(function () {
-        $location.path('jobs/' + job._id);
-      }, function (errorResponse) {
-        $scope.error = errorResponse.data.message;
-      });
-    };
-
-    // Find a list of Jobs
-    $scope.find = function () {
-      $scope.jobs = Jobs.query();
-    };
-
-    // Find existing job
-    $scope.findOne = function () {
-      $scope.job = Jobs.get({
-        jobId: $stateParams.jobId
-      });
-    };
+    }
   }
-]);
+}());

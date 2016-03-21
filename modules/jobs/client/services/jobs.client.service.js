@@ -1,8 +1,13 @@
-'use strict';
+(function () {
+  'use strict';
 
-// Jobs service used for communicating with the jobs REST endpoints
-angular.module('jobs').factory('Jobs', ['$resource',
-  function ($resource) {
+  angular
+    .module('jobs.services')
+    .factory('JobsService', JobsService);
+
+  JobsService.$inject = ['$resource'];
+
+  function JobsService($resource) {
     return $resource('api/jobs/:jobId', {
       jobId: '@_id'
     }, {
@@ -11,4 +16,4 @@ angular.module('jobs').factory('Jobs', ['$resource',
       }
     });
   }
-]);
+}());
