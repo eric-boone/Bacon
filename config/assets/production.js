@@ -6,8 +6,8 @@ module.exports = {
       css: [
         // bower:css
         'public/lib/bootstrap/dist/css/bootstrap.css',
-        'public/lib/bootstrap/dist/css/bootstrap-theme.css',
-        'public/lib/bootstrap-material-design/dist/bootstrap-material-design.css',
+        // 'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+        'public/lib/bootstrap-material-design/dist/css/bootstrap-material-design.css',
         'public/lib/my-styles/styles.css'
         // endbower
       ],
@@ -21,10 +21,8 @@ module.exports = {
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         'public/lib/angular-file-upload/dist/angular-file-upload.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
-        'public/lib/bootstrap-material-design/dist/bootstrap-material-design.es.js',
-        'public/lib/bootstrap-material-design/dist/bootstrap-material-design.iife.js',
-        'public/lib/bootstrap-material-design/dist/bootstrap-material-design.iife.min.js',
-        'public/lib/bootstrap-material-design/dist/bootstrap-material-design.umd.js'
+        'public/lib/bootstrap-material-design/dist/js/material.js',
+        'public/lib/bootstrap-material-design/dist/js/ripples.js'
         // endbower
       ]
     },
