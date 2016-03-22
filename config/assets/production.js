@@ -5,20 +5,26 @@ module.exports = {
     lib: {
       css: [
         // bower:css
-        'public/lib/bootstrap/dist/css/bootstrap.min.css',
-        'public/lib/bootstrap/dist/css/bootstrap-theme.min.css'
+        'public/lib/bootstrap/dist/css/bootstrap.css',
+        'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+        'public/lib/bootstrap-material-design/dist/bootstrap-material-design.css',
+        'public/lib/my-styles/styles.css'
         // endbower
       ],
       js: [
         // bower:js
-        'public/lib/angular/angular.min.js',
-        'public/lib/angular-resource/angular-resource.min.js',
-        'public/lib/angular-animate/angular-animate.min.js',
-        'public/lib/angular-messages/angular-messages.min.js',
-        'public/lib/angular-ui-router/release/angular-ui-router.min.js',
-        'public/lib/angular-bootstrap/ui-bootstrap-tpls.min.js',
-        'public/lib/angular-file-upload/dist/angular-file-upload.min.js',
-        'public/lib/owasp-password-strength-test/owasp-password-strength-test.js'
+        'public/lib/angular/angular.js',
+        'public/lib/angular-resource/angular-resource.js',
+        'public/lib/angular-animate/angular-animate.js',
+        'public/lib/angular-messages/angular-messages.js',
+        'public/lib/angular-ui-router/release/angular-ui-router.js',
+        'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
+        'public/lib/angular-file-upload/dist/angular-file-upload.js',
+        'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
+        'public/lib/bootstrap-material-design/dist/bootstrap-material-design.es.js',
+        'public/lib/bootstrap-material-design/dist/bootstrap-material-design.iife.js',
+        'public/lib/bootstrap-material-design/dist/bootstrap-material-design.iife.min.js',
+        'public/lib/bootstrap-material-design/dist/bootstrap-material-design.umd.js'
         // endbower
       ]
     },
