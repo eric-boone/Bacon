@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, user-scalable=no">
   <base href="/">
   <title page-title></title>
   <meta name="description" content="{{description}}">
@@ -36,12 +36,14 @@
 </head>
 
 <body class="ng-cloak">
-  <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
-  <section class="content">
-    <section class="container">
+  <div flex layout-fill layout="column">
+    <md-toolbar>
+      <header ng-include="'/modules/core/client/views/header.client.view.html'" class="md-toolbar-tool"></header>
+    </md-toolbar>
+    <md-content class="md-padding">
       {% block content %}{% endblock %}
-    </section>
-  </section>
+    </md-content>
+  </div>
 
   <!--Embedding The User Object-->
   <script type="text/javascript">
