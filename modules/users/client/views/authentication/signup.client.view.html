@@ -47,9 +47,9 @@
           <uib-progressbar value="requirementsProgress" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></uib-progressbar>
         </div>
         <div class="text-center form-group">
-          <button type="submit" class="btn btn-primary">Sign up</button>
+          <button type="submit" class="btn btn-danger">Sign up</button>
           &nbsp; or&nbsp;
-          <a ui-sref="authentication.signin" class="show-signup">Sign in</a>
+          <a class="text-danger" ui-sref="authentication.signin" class="show-signup">Sign in</a>
         </div>
         <div ng-show="vm.error" class="text-center text-danger">
           <strong ng-bind="vm.error"></strong>

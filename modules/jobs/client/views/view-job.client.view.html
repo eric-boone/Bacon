@@ -2,14 +2,14 @@
   <div class="page-header">
     <div class="pull-right" ng-show="vm.job.isCurrentUserOwner">
       <a class="btn btn-primary" ui-sref="jobs.edit({ jobId: vm.job._id })">
-        <i class="glyphicon glyphicon-edit"></i>
+        <span class="text-danger"><i class="glyphicon glyphicon-edit"></i></span>
       </a>
       <a class="btn btn-primary" ng-click="vm.remove()">
-        <i class="glyphicon glyphicon-trash"></i>
+        <span class="text-danger"><i class="glyphicon glyphicon-trash"></i></span>
       </a>
     </div>
     <h1 ng-bind="vm.job.job_title"></h1>
-    <span ng-bind="vm.job.company"></span> - <span ng-bind="vm.job.job_location"></span> - <a href="#"> <span ng-bind="vm.job.job_link"></span></a>
+    <span ng-bind="vm.job.company"></span> - <span ng-bind="vm.job.job_location"></span> - <a class="text-danger" href="#"> <span ng-bind="vm.job.job_link"></span></a>
   </div>
   <div class="">
     <h4><strong>Job Description</strong></h4>
