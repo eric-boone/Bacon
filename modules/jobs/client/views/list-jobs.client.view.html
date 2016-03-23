@@ -3,7 +3,12 @@
     <h1>Jobs</h1>
   </div>
   <div class="list-group">
-    <a ng-repeat="job in vm.jobs" ui-sref="jobs.view({ jobId: job._id })" class="list-group-item">
+    <a ng-repeat="job in vm.jobs" ui-sref="jobs.view({ jobId: job._id })" class="list-group-item border-bottom">
+
+      <h4 class="list-group-item-heading" ng-bind="job.job_title"></h4>
+      <span class="list-group-item-text" ng-bind="job.company"></span> - 
+      <span class="list-group-item-text" ng-bind="job.job_location"></span>
+      <br>
       <small class="list-group-item-text">
         Posted on
         <span ng-bind="job.created | date:'mediumDate'"></span>
@@ -11,8 +16,7 @@
         <span ng-if="job.user" ng-bind="job.user.displayName"></span>
         <span ng-if="!job.user">Deleted User</span>
       </small>
-      <h4 class="list-group-item-heading" ng-bind="job.job_title"></h4>
-      <p class="list-group-item-text" ng-bind="job.company"></p>
+      <div style="height:15px;"></div>
     </a>
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.jobs.$resolved && !vm.jobs.length">

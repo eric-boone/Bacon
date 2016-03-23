@@ -35,10 +35,10 @@
       state: 'settings.password'
     });
 
-    Menus.addSubMenuItem('account', 'settings', {
-      title: 'Manage Social Accounts',
-      state: 'settings.accounts'
-    });
+    // Menus.addSubMenuItem('account', 'settings', {
+    //   title: 'Manage Social Accounts',
+    //   state: 'settings.accounts'
+    // });
 
   }
 

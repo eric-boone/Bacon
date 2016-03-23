@@ -9,16 +9,24 @@
       </a>
     </div>
     <h1 ng-bind="vm.job.job_title"></h1>
-    <span ng-bind="vm.job.company"></span> - <span ng-bind="vm.job.job_location"></span> - <span ng-bind="vm.job.job_link"></span>
+    <span ng-bind="vm.job.company"></span> - <span ng-bind="vm.job.job_location"></span> - <a href="#"> <span ng-bind="vm.job.job_link"></span></a>
   </div>
   <div class="">
+    <h4><strong>Job Description</strong></h4>
     <p ng-bind="vm.job.job_description"></p>
+    <h4><strong>Job Requirements</strong></h4>
     <p ng-bind="vm.job.job_requirements"></p>
+    <h4><strong>Rate</strong></h4>
     <p ng-bind="vm.job.job_rate"></p>
+    <h4><strong>Job Notes</strong></h4>
     <p ng-bind="vm.job.job_notes"></p>
+    <h4><strong>Company Notes</strong></h4>
     <p ng-bind="vm.job.company_notes"></p>
+    <h4><strong>Contact Name</strong></h4>
     <p ng-bind="vm.job.contact_name"></p>
+    <h4><strong>Contact Email</strong></h4>
     <p ng-bind="vm.job.contact_email"></p>
+    <h4><strong>Contact Phone</strong></h4>
     <p ng-bind="vm.job.contact_phone"></p>
   </div>
   <small>
