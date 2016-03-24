@@ -28,3 +28,15 @@
   background-color: #f44336;
   color: white;
 }
+.hero {
+  background: url("../img/construction-work-carpenter-tools-w1000.jpg") no-repeat center center;
+  background-size: cover;
+  color: white;
+  height: 40vw;
+}
+.jumbotron p {
+  margin-top: 10%;
+  font-size: 28px;
+  font-weight: 400;
+  text-shadow: 2px 2px black;
+}
