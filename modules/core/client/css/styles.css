@@ -1,0 +1,30 @@
+
+.form-group label.control-label {
+  font-size: 18px;
+  color: black;
+}
+.form-group > input:focus {
+  border-right: 4px solid #790000;
+}
+.form-group > textarea:focus {
+  border-right: 4px solid #790000;
+}
+.form-control {
+  font-size: 14px;
+}
+.job-styles {
+  z-index: 100;
+}
+.job-submit {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 200;
+}
+.border-bottom {
+  border-bottom: 1px solid #D3D3D3;
+}
+.navbar.navbar-inverse {
+  background-color: #f44336;
+  color: white;
+}

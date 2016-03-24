@@ -6,7 +6,6 @@ module.exports = {
       css: [
         // bower:css
         'public/lib/bootstrap/dist/css/bootstrap.css',
-        // 'public/lib/bootstrap/dist/css/bootstrap-theme.css',
         'public/lib/bootstrap-material-design/dist/css/bootstrap-material-design.css',
         'public/lib/my-styles/styles.css'
         // endbower
