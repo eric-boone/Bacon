@@ -40,3 +40,7 @@
   font-weight: 400;
   text-shadow: 2px 2px black;
 }
+.navbar.navbar-inverse .dropdown-menu .active > a {
+  background-color: #f44336;
+  color: white;
+}
